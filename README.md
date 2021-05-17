@@ -31,7 +31,7 @@ A Python Wrapper for the [COVID-19 API](https://github.com/mathdroid/covid-19-ap
 ```python
 import covid19pyclient
 
-covid19pyclient.__version__
+print(covid19pyclient.__version__)
 ```
 
 # Contents
@@ -40,6 +40,8 @@ covid19pyclient.__version__
 - [How to use covid19pyclient](#how-to-use-covid19pyclient)
 
 # Features
+
+
 
 # Installation
 

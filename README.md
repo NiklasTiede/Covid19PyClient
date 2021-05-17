@@ -2,12 +2,12 @@
 # COVID-19 API Python Client
 
 
-<p align="center">
+<!-- <p align="center">
   <img  alt="covid19pyclient" align="center" height="500" src="docs/covid19pyclient.png" />
    <h3 align="center">A Python Wrapper around the COVID-19 API.</h3>
-<p>
+<p> -->
 
-<p id="Badges" align="center">
+<!-- <p id="Badges" align="center">
   <a alt="Platform" href="https://pypi.org/project/covid19pyclient/">
     <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/covid19pyclient">
   </a>
@@ -20,9 +20,9 @@
   <a alt="Codecov" href="https://app.codecov.io/gh/NiklasTiede/covid19pyclient">
     <img src="https://img.shields.io/codecov/c/github/NiklasTiede/covid19pyclient" />
   </a>
-</p>
+</p> -->
 
-A Python Wrapper around the COVID-19 API.
+A Python Wrapper for the [COVID-19 API](https://github.com/mathdroid/covid-19-api)!
 
 <!-- PYPI-DOCS:START -->
 
@@ -31,14 +31,13 @@ A Python Wrapper around the COVID-19 API.
 ```python
 import covid19pyclient
 
-
+covid19pyclient.__version__
 ```
 
 # Contents
 - [Features](#features)
 - [Installation](#installation)
 - [How to use covid19pyclient](#how-to-use-covid19pyclient)
-
 
 # Features
 
@@ -47,7 +46,7 @@ import covid19pyclient
 You can install COVID-19 API Python Client with pip.
 
 ```python
-$ pip install
+$ pip install covid19pyclient
 ```
 
 # How to use covid19pyclient

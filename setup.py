@@ -22,13 +22,22 @@ setup(
         'Documentation': '',    # TODO enter readthedocs url
         'Source Code': 'https://github.com/NiklasTiede/covid19pyclient',
     },
-    include_package_data=True,
-    keywords='covid19pyclient',
+    # include_package_data=True,
+    # keywords='covid19pyclient',
     packages=find_packages(where="covid19pyclient"),
-    setup_requires='pytest-runner',
-    test_suite='tests',
-    tests_require='pytest>=3',
-    zip_safe=False,
+    extras_require={
+        "dev": [
+            "pytest",
+            "pytest-cov",
+            "tox",
+            "pre-commit",
+        ],
+    },
+    platforms="any",
+    # setup_requires='pytest-runner',
+    # test_suite='tests',
+    # tests_require='pytest>=3',
+    # zip_safe=False,
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

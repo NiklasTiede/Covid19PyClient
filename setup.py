@@ -5,6 +5,12 @@ import pathlib
 from setuptools import find_packages
 from setuptools import setup
 
+# from covid19pyclient import __api_src__
+# from covid19pyclient import __author__
+# from covid19pyclient import __email__
+# from covid19pyclient import __version__
+
+
 setup(
     name='covid19pyclient',
     version='1.0.0',
@@ -17,14 +23,16 @@ setup(
     long_description=pathlib.Path("pypi_description.md").read_text(encoding="utf-8"),
     install_requires=[
         "requests>=2.21.0",
-    ] ,
+    ],
     project_urls={
         'Documentation': '',    # TODO enter readthedocs url
         'Source Code': 'https://github.com/NiklasTiede/covid19pyclient',
     },
     # include_package_data=True,
     # keywords='covid19pyclient',
-    packages=find_packages(where="covid19pyclient"),
+    # packages=find_packages(where="covid19pyclient"),
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
     extras_require={
         "dev": [
             "pytest",

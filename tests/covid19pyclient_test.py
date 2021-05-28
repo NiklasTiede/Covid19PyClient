@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 """Tests for `covid19pyclient` package."""
-import unittest
-
 import pytest
 
-from covid19pyclient import covid19pyclient
+# from covid19pyclient import CovidData
 
 
 @pytest.fixture

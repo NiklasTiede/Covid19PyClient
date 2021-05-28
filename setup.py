@@ -5,21 +5,26 @@ import pathlib
 from setuptools import find_packages
 from setuptools import setup
 
+from covid19pyclient import __api_src__
+from covid19pyclient import __author__
+from covid19pyclient import __email__
+from covid19pyclient import __version__
 
 setup(
     name='covid19pyclient',
-    version='0.1.0',
+    version=__version__,
     url='https://github.com/NiklasTiede/covid19pyclient',
-    author="Niklas Tiede",
-    author_email='niklastiede2@gmail.com',
+    author=__author__,
+    author_email=__email__,
     license="MIT license",
     python_requires='>=3.6',
-    description="A Python Wrapper around the COVID-19 API.",
+    description=f"A Python Wrapper around the COVID-19 API {__api_src__!r}.",
     long_description=pathlib.Path("pypi_description.md").read_text(encoding="utf-8"),
     # install_requires=requirements,
     include_package_data=True,
     keywords='covid19pyclient',
-    packages=find_packages(include=['covid19pyclient', 'covid19pyclient.*']),
+    # packages=find_packages(include=['covid19pyclient', 'covid19pyclient.*']),
+    packages=find_packages(where="covid19pyclient"),
     setup_requires='pytest-runner',
     test_suite='tests',
     tests_require='pytest>=3',

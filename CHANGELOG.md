@@ -17,9 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - selecting spoken languages on repositories was fixed
 - lxml dependency was updated to fix security issue -->
 
-## [0.1.0] - year-month-day
+## [1.0.0] - year-month-day
 
 Project released.
 
-[Unreleased]: https://github.com/NiklasTiede/covid19pyclient/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/NiklasTiede/covid19pyclient/releases/tag/v0.1.0
+[Unreleased]: https://github.com/NiklasTiede/covid19pyclient/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/NiklasTiede/covid19pyclient/releases/tag/v1.0.0

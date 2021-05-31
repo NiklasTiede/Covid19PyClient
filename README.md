@@ -1,11 +1,8 @@
 
-# COVID-19 API Python Client
-
-
-<!-- <p align="center">
-  <img  alt="covid19pyclient" align="center" height="500" src="docs/covid19pyclient.png" />
-   <h3 align="center">A Python Wrapper around the COVID-19 API.</h3>
-<p> -->
+<p align="center">
+  <img  alt="covid19pyclient" align="center" height="300" src="docs/corona1.jpg" />
+   <h3 align="center">A Thin Python Wrapper for the COVID-19 API of the Robert Koch Institute, Germany.</h3>
+<p>
 
 <!-- <p id="Badges" align="center">
   <a alt="Platform" href="https://pypi.org/project/covid19pyclient/">
@@ -22,7 +19,7 @@
   </a>
 </p> -->
 
-A Python Wrapper for the [COVID-19 API](https://github.com/mathdroid/covid-19-api)!
+A Python Wrapper for the [COVID-19 API]()!
 
 <!-- PYPI-DOCS:START -->
 

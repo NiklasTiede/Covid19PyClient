@@ -11,9 +11,8 @@
 import os
 import sys
 
-import sphinx_rtd_theme
-
 import covid19pyclient
+import sphinx_rtd_theme
 sphinx_rtd_theme.__version__
 
 sys.path.insert(0, os.path.abspath('..'))

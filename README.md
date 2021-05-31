@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img  alt="covid19pyclient" align="center" width="500" src="docs/m.png" />
+  <img  alt="covid19pyclient" align="center" width="500" src="docs/1.png" />
    <h3 align="center">A Thin Python Wrapper for the COVID-19 API of the Robert Koch Institute, Germany.</h3>
 <p>
 

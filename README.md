@@ -9,20 +9,20 @@
    <h3 align="center">A Thin Python Wrapper for the <a alt="rki covid api" href="https://api.corona-zahlen.org/docs/">COVID-19 API</a> of the Robert Koch Institute, Germany.</h3>
 <p>
 
-<!-- <p id="Badges" align="center">
-  <a alt="Platform" href="https://pypi.org/project/covid19pyclient/">
+<p id="Badges" align="center">
+  <!-- <a alt="Platform" href="https://pypi.org/project/covid19pyclient/">
     <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/covid19pyclient">
-  </a>
+  </a> -->
   <a alt="GH actions" href="https://github.com/NiklasTiede/covid19pyclient/actions">
     <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/NiklasTiede/covid19pyclient/Continuos%20Integration">
   </a>
-  <a alt="GH Release" href="https://github.com/NiklasTiede/covid19pyclient/releases">
+  <!-- <a alt="GH Release" href="https://github.com/NiklasTiede/covid19pyclient/releases">
     <img src="https://img.shields.io/github/v/release/NiklasTiede/covid19pyclient" />
   </a>
   <a alt="Codecov" href="https://app.codecov.io/gh/NiklasTiede/covid19pyclient">
     <img src="https://img.shields.io/codecov/c/github/NiklasTiede/covid19pyclient" />
-  </a>
-</p> -->
+  </a> -->
+</p>
 
 
 <p align="center">
@@ -48,7 +48,7 @@ data = covid.germany_total()
 print(json.dumps(data, sort_keys=True, indent=4))
 ```
 
-```python
+```json
 {
     "cases": 3682911,
     "casesPer100k": 4428.3475391975035,

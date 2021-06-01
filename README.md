@@ -25,11 +25,11 @@
 </p>
 
 <p align="center">
-  <a alt="readthedocs documentation" href="">Documentation</a>
+  <a alt="readthedocs documentation" href="https://covid19pyclient.readthedocs.io/en/latest/">Documentation</a>
   •
-  <a alt="matplotlib plot examples" href="">Plot Examples</a>
+  <a alt="matplotlib plot examples" href="https://github.com/NiklasTiede/COVID19-API-PythonClient/tree/main/examples">Plot Examples</a>
   •
-  <a alt="RKI API source code" href="">Covid API src</a>
+  <a alt="RKI API source code" href="https://github.com/marlon360/rki-covid-api">Covid API src</a>
 <p>
 
 
@@ -76,25 +76,27 @@ print(json.dumps(data, sort_keys=True, indent=4))
 
 
 # Contents
-- [Featured Data](#features)
+- [Featured Data](#featured-data)
 - [Installation](#installation)
-- [How to use covid19pyclient](#how-to-use-covid19pyclient)
+- [How to use](#how-to-use)
 
-# Features
+# Featured Data
 
+- timeseries data
+- data available for country, states, districts
 
 
 # Installation
 
 You can install COVID-19 API Python Client with pip.
 
-```python
+```console
 $ pip install covid19pyclient
 ```
 
-# How to use covid19pyclient
+# How to use
 
-
+`covid19pyclient` returns the data as dictionaries.
 
 
 <!-- PYPI-Docs:END -->

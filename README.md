@@ -3,12 +3,12 @@
   <img  alt="covid19pyclient" align="center" width="400" src="docs/covidclient.jpg" />
 <p>
 
----
-
 <p align="center">
-   <h3 align="center">A Thin Python Wrapper for the <a alt="rki covid api" href="https://api.corona-zahlen.org/docs/">COVID-19 API</a> of the Robert Koch Institute, Germany.</h3>
+   <h3 align="center">A Thin Python Wrapper for the <a alt="rki covid api" target="_blank" href="https://api.corona-zahlen.org/docs/">COVID-19 API</a> of the Robert Koch Institute, Germany.</h3>
 <p>
 
+---
+    
 <!-- <p id="Badges" align="center">
   <a alt="Platform" href="https://pypi.org/project/covid19pyclient/">
     <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/covid19pyclient">

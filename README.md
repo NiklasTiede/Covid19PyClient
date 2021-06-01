@@ -4,14 +4,6 @@
 <p>
 
 <p align="center">
-  <a alt="readthedocs documentation" href="">Documentation</a>
-  •
-  <a alt="matplotlib plot examples" href="">Plot Examples</a>
-  •
-  <a alt="RKI API source code" href="">Covid API src</a>
-<p>
-
-<p align="center">
    <h3 align="center">A Thin Python Wrapper for the <a alt="rki covid api" href="https://api.corona-zahlen.org/docs/">COVID-19 API</a> of the Robert Koch Institute, Germany.</h3>
 <p>
 
@@ -32,7 +24,13 @@
   </a> -->
 </p>
 
-
+<p align="center">
+  <a alt="readthedocs documentation" href="">Documentation</a>
+  •
+  <a alt="matplotlib plot examples" href="">Plot Examples</a>
+  •
+  <a alt="RKI API source code" href="">Covid API src</a>
+<p>
 
 
 <!-- PYPI-DOCS:START -->

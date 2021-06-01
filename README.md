@@ -49,7 +49,7 @@ data = covid.germany_total()
 print(json.dumps(data, sort_keys=True, indent=4))
 ```
 
-```json
+```yaml
 {
     "cases": 3682911,
     "casesPer100k": 4428.3475391975035,

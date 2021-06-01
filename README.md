@@ -4,7 +4,7 @@
 <p>
 
 <p align="center">
-   <h3 align="center">A Thin Python Wrapper for the <a alt="rki covid api" target="_blank" href="https://api.corona-zahlen.org/docs/">COVID-19 API</a> of the Robert Koch Institute, Germany.</h3>
+   <h3 align="center">A Thin Python Wrapper for the <a alt="rki covid api" href="https://api.corona-zahlen.org/docs/">COVID-19 API</a> of the Robert Koch Institute, Germany.</h3>
 <p>
 
 ---

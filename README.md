@@ -1,9 +1,6 @@
 
 <p align="center">
   <img  alt="covid19pyclient" align="center" width="400" src="docs/covidclient.jpg" />
-<p>
-
-<p align="center">
    <h3 align="center">A Thin Python Wrapper for the <a alt="rki covid api" href="https://api.corona-zahlen.org/docs/">COVID-19 API</a> of the Robert Koch Institute, Germany.</h3>
 <p>
 
@@ -13,9 +10,9 @@
   <!-- <a alt="Platform" href="https://pypi.org/project/covid19pyclient/">
     <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/covid19pyclient">
   </a> -->
-  <a alt="GH actions" href="https://github.com/NiklasTiede/covid19pyclient/actions">
+  <!-- <a alt="GH actions" href="https://github.com/NiklasTiede/covid19pyclient/actions">
     <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/NiklasTiede/covid19pyclient/Continuos%20Integration">
-  </a>
+  </a> -->
   <!-- <a alt="GH Release" href="https://github.com/NiklasTiede/covid19pyclient/releases">
     <img src="https://img.shields.io/github/v/release/NiklasTiede/covid19pyclient" />
   </a>

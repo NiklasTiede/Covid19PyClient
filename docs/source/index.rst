@@ -1,10 +1,12 @@
 
 .. _contents:
 
-Welcome to COVID-19 API Python Client's documentation!
-======================================================
+Welcome to RKI COVID-19 API Python Client's documentation!
+==========================================================
 
-A Python Wrapper around the COVID-19 API.
+A Thin Python Wrapper for the `COVID-19 API`_ of the Robert Koch Institute, Germany.
+
+.. _COVID-19 API: https://api.corona-zahlen.org/docs/
 
 Documentation
 -------------
@@ -19,3 +21,4 @@ Documentation
 
    install
    tutorial
+   data

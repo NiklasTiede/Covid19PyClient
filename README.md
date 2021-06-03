@@ -1,8 +1,10 @@
 
 <p align="center">
-  <img  alt="covid19pyclient" align="center" width="400" src="docs/covidclient.jpg" />
-   <h3 align="center">A Thin Python Wrapper for the <a alt="rki covid api" href="https://api.corona-zahlen.org/docs/">COVID-19 API</a> of the Robert Koch Institute, Germany.</h3>
+  <img  alt="covid19pyclient" align="center" width="300" src="docs/covidclient.jpg" />
+   <h4 align="center">A Thin Python Wrapper for the COVID-19 API of the Robert Koch Institute, Germany.</h4>
 <p>
+
+<!-- <a alt="rki covid api" href="https://api.corona-zahlen.org/docs/">COVID-19 API</a> -->
 
 ---
 

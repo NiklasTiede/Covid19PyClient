@@ -22,7 +22,7 @@ lint: ## check style with flake8
 	flake8 covid19pyclient tests
 
 test: ## run tests quickly with the default Python
-	pytest -v
+	pytest -s -vvv
 
 test-all: ## test across Python 3.6 - 3.9
 	tox

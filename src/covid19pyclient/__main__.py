@@ -1,4 +1,5 @@
 """Python Wrapper of COVID-19 API. RKI Data are about COVID-19 metrics in Germany."""
+from datetime import datetime
 from typing import Any
 from typing import Dict
 
@@ -6,10 +7,12 @@ import requests
 
 from .endpoints import API_PATH
 from .endpoints import BASE_URL
-from .endpoints import STATES
-from .endpoints import TYPES
+from .exceptions import NoValidDistrictError
 from .exceptions import NoValidStateError
 from .exceptions import NoValidTypeError
+from .valid_parameters import AGS
+from .valid_parameters import STATES
+from .valid_parameters import TYPES
 
 
 class CovidData:
@@ -69,11 +72,11 @@ class CovidData:
         self.url = BASE_URL + API_PATH["germany_age_groups"]
         return self.__make_request(self.url)
 
-    def states_total(self, selected_state: str = '') -> Dict[str, Any]:
+    def states_total(self, state: str = '') -> Dict[str, Any]:
         """data accumulated according sorted by geolocation (states)
 
         Args:
-            selected_state (str, optional): one of 16 germany state as 2-letter code. Defaults to ''.
+            state (str, optional): one of 16 germany state as 2-letter code. Defaults to ''.
 
         Raises:
             NoValidStateError: if not chosen a selected type correctly
@@ -81,19 +84,19 @@ class CovidData:
         Returns:
             Dict[str, Any]: dict of data
         """
-        if selected_state and selected_state not in STATES:
-            raise NoValidStateError(selected_state)
-        elif selected_state:
-            self.url = BASE_URL + API_PATH["states_by_state"].format(state=selected_state)
+        if state and state not in STATES:
+            raise NoValidStateError(state)
+        elif state:
+            self.url = BASE_URL + API_PATH["states_by_state"].format(state=state)
         else:
-            self.url = BASE_URL + API_PATH["states_accumulated"].format(state=selected_state)
+            self.url = BASE_URL + API_PATH["states_accumulated"].format(state=state)
         return self.__make_request(self.url)
 
-    def states_by_agegroups(self, selected_state: str = '') -> Dict[str, Any]:
+    def states_by_agegroups(self, state: str = '') -> Dict[str, Any]:
         """[summary]
 
         Args:
-            selected_state (str, optional): [description]. Defaults to ''.
+            state (str, optional): [description]. Defaults to ''.
 
         Raises:
             NoValidStateError: [description]
@@ -101,38 +104,58 @@ class CovidData:
         Returns:
             Dict[str, Any]: [description]
         """
-        if selected_state and selected_state not in STATES:
-            raise NoValidStateError(selected_state)
-        elif selected_state and selected_state in STATES:
-            self.url = BASE_URL + API_PATH["states_by_state_and_agegroups"].format(state=selected_state)
+        if state and state not in STATES:
+            raise NoValidStateError(state)
+        elif state and state in STATES:
+            self.url = BASE_URL + API_PATH["states_by_state_and_agegroups"].format(state=state)
         else:
-            self.url = BASE_URL + API_PATH["states_by_agegroups"].format(state=selected_state)
+            self.url = BASE_URL + API_PATH["states_by_agegroups"].format(state=state)
         return self.__make_request(self.url)
 
-    def districts_total(self) -> Dict[str, Any]:
+    def districts_total(self, ag: str = '') -> Dict[str, Any]:
         """[summary]
+
+        Args:
+            ag (str, optional): [description]. Defaults to ''.
+
+        Raises:
+            NoValidDistrictError: [description]
 
         Returns:
             Dict[str, Any]: [description]
         """
-        self.url = BASE_URL + API_PATH["districts_accumulated"].format()
+        if ag not in AGS:
+            raise NoValidDistrictError(ag)
+        elif ag:
+            self.url = BASE_URL + API_PATH["districts_accumulated_by_ags"].format(ags=ag)
+        else:
+            self.url = BASE_URL + API_PATH["districts_accumulated"].format()
         return self.__make_request(self.url)
 
-    def districts_timeseries(self, days_limit: int = 0, selected_type: str = 'cases') -> Dict[str, Any]:
+    def districts_timeseries(self, ag: str = '', days_limit: int = 0, selected_type: str = 'cases') -> Dict[str, Any]:
         """[summary]
 
         Args:
+            ag (str, optional): [description]. Defaults to ''.
             days_limit (int, optional): [description]. Defaults to 0.
             selected_type (str, optional): [description]. Defaults to 'cases'.
 
         Raises:
+            NoValidDistrictError: [description]
             NoValidTypeError: [description]
 
         Returns:
             Dict[str, Any]: [description]
         """
-        if selected_type not in TYPES:
+        ag = str(ag)
+        if ag and ag not in AGS:
+            raise NoValidDistrictError(ag)
+        elif selected_type not in TYPES:
             raise NoValidTypeError(selected_type)
+        elif days_limit and ag:
+            self.url = BASE_URL + API_PATH["districts_timeseries_by_ag_paginated"].format(types=selected_type, ags=ag, days=days_limit)
+        elif ag:
+            self.url = BASE_URL + API_PATH["districts_timeseries_by_ag"].format(types=selected_type, ags=ag)
         elif days_limit:
             self.url = BASE_URL + API_PATH["districts_timeseries_paginated"].format(types=selected_type, days=days_limit)
         else:
@@ -177,3 +200,15 @@ class CovidData:
         else:
             self.url = BASE_URL + API_PATH["testing_timeseries_all"].format()
         return self.__make_request(self.url)
+
+    @staticmethod
+    def datereader(date: str) -> datetime:
+        """Turns the datetime format used in the API responses into a datetime object (datetime standard module).
+
+        Args:
+            date (str): datetime value used within the API.
+
+        Returns:
+            [datetime.datetime]: datetime object
+        """
+        return datetime.strptime(date, "%Y-%m-%dT%H:%M:%S.%fZ")

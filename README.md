@@ -1,7 +1,7 @@
 
 <p align="center">
   <img  alt="covid19pyclient" align="center" width="350" src="docs/covidclient.jpg" />
-   <h3 align="center">A Thin Python Wrapper for the COVID-19 API of the Robert Koch Institute, Germany.</h3>
+   <h3 align="center">A Thin Wrapper for the API of the Robert Koch Institute, Germany.</h3>
 <p>
 
 <!-- <a alt="rki covid api" href="https://api.corona-zahlen.org/docs/">COVID-19 API</a> -->
@@ -43,7 +43,7 @@ from covid19pyclient import CovidData
 covid = CovidData()
 data = covid.germany_total()
 
-print(json.dumps(data, sort_keys=True, indent=4))
+print(json.dumps(data, sort_keys=True, indent=4, ensure_ascii=False))
 ```
 
 ```yaml

@@ -16,7 +16,7 @@ The data are returned as dictionaries. Here's an example::
 
     data = covid.germany_total()
 
-    print(json.dumps(data, sort_keys=True, indent=4))
+    print(json.dumps(data, sort_keys=True, indent=4, ensure_ascii=False))
 
 output::
 
@@ -44,6 +44,9 @@ output::
         "recovered": 3498382,
         "weekIncidence": 35.16791712491793
     }
+
+.. note::
+   To convert the datetime strings of the API responses into Python datetime objects more conveniently this module contains a ``.datereader()`` function.
 
 ----------
 

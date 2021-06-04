@@ -33,27 +33,29 @@ class CovidData:
             raise SystemExit(e)
 
     def germany_total(self) -> Dict[str, Any]:
-        """Accumulated numbers of SARS-CoV-2-related cases, deaths and recovery at this point of time in germany.
+        """Epidemiological data on COVID-19. Current total amount of cases, deaths, incidence and
+        recovery in germany.
 
         Returns:
-            Dict[str, Any]: cases, casesPer100k, casesPerWeek, deaths, delta, r, recovered, weekIncidence, meta.
+            Dict[str, Any]: data about cases, deaths, delta etc.
         """
         self.url = BASE_URL + API_PATH["germany_accumulated"].format()
         return self.__make_request(self.url)
 
     def germany_timeseries(self, days_limit: int = 0, selected_type: str = 'cases') -> Dict[str, Any]:
-        """The daily numbers of cases, incidence, deaths and recovered patients in germany are recorded as timeseries.
+        """Epidemiological data on COVID-19. Daily amounts of cases, incidence, deaths and recovered patients
+        in germany recorded as timeseries.
 
         Args:
-            days_limit (int, optional): number of latest datapoints can be limited. Defaults to no limit.
-            selected_type (str, optional): select between cases/deaths/incidence and x. Defaults to 'cases'.
+            days_limit (int, optional): Number of latest datapoints can be limited. Defaults to no limit.
+            selected_type (str, optional): Select between 'cases', 'deaths', 'incidence', 'recovered'. Defaults to cases.
 
         Raises:
-            NoValidTypeError: if no valid `selected_type`-arg (cases, incidence, deaths, recovered) was provided.
+            NoValidTypeError: If no valid type ('cases', 'incidence', 'deaths', 'recovered') was chosen.
 
         Returns:
-            Dict[str, Any]: data -> tuples of the amount of `selected_type` and date
-                            meta ->
+            Dict[str, Any]: data -> tuples containing the amount of `selected_type` and date
+                            meta -> information about lastUpdate and API maintainer
         """
         if selected_type not in TYPES:
             raise NoValidTypeError(selected_type)
@@ -64,25 +66,28 @@ class CovidData:
         return self.__make_request(self.url)
 
     def germany_by_agegroups(self) -> Dict[str, Any]:
-        """data about all persons sorted by age groups.
+        """Epidemiological data on COVID-19. Current total amount of data broken down by age cohorts and gender.
 
         Returns:
-            Dict[str, Any]: returns accumulated data as dict
+            Dict[str, Any]: data -> metrics about cases and deaths on males/females in different age cohorts
+                            meta -> information about lastUpdate and API maintainer
         """
         self.url = BASE_URL + API_PATH["germany_age_groups"]
         return self.__make_request(self.url)
 
     def states_total(self, state: str = '') -> Dict[str, Any]:
-        """data accumulated according sorted by geolocation (states)
+        """Epidemiological data on COVID-19. Current total amount of cases, incidence, deaths and
+        recovered patients sorted by geolocation (states).
 
         Args:
-            state (str, optional): one of 16 germany state as 2-letter code. Defaults to ''.
+            state (str, optional): A german federal state represented as as 2-letter code. Defaults to all states.
 
         Raises:
-            NoValidStateError: if not chosen a selected type correctly
+            NoValidStateError: If no valid state was chosen (see valid_parameters.py).
 
         Returns:
-            Dict[str, Any]: dict of data
+            Dict[str, Any]: data -> metrics about cases and deaths etc. within a specified state
+                            meta -> information about lastUpdate and API maintainer
         """
         if state and state not in STATES:
             raise NoValidStateError(state)
@@ -93,16 +98,18 @@ class CovidData:
         return self.__make_request(self.url)
 
     def states_by_agegroups(self, state: str = '') -> Dict[str, Any]:
-        """[summary]
+        """Epidemiological data on COVID-19. Current total amount of data per state broken down by age cohorts and gender.
 
         Args:
-            state (str, optional): [description]. Defaults to ''.
+            state (str, optional): A german federal state represented as as 2-letter code. Defaults to all states.
 
         Raises:
-            NoValidStateError: [description]
+            NoValidStateError: If no valid state was chosen (see valid_parameters.py).
 
         Returns:
-            Dict[str, Any]: [description]
+            Dict[str, Any]: data -> metrics about total number of cases/deaths on males/females in different age
+                                    cohorts within the specified state
+                            meta -> information about lastUpdate and API maintainer
         """
         if state and state not in STATES:
             raise NoValidStateError(state)
@@ -113,16 +120,19 @@ class CovidData:
         return self.__make_request(self.url)
 
     def districts_total(self, ag: str = '') -> Dict[str, Any]:
-        """[summary]
+        """Epidemiological data on COVID-19. Current total amount of cases, incidence, deaths and
+        recovered patients sorted by geolocation (districts).
 
         Args:
-            ag (str, optional): [description]. Defaults to ''.
+            ag (str, optional): 5-digit community identification number (amtlicher gemeindeschlüssel).
+            Defaults to all districts.
 
         Raises:
-            NoValidDistrictError: [description]
+            NoValidDistrictError: If no valid district was chosen (see valid_parameters.py).
 
         Returns:
-            Dict[str, Any]: [description]
+            Dict[str, Any]: data -> metrics about total cases, deaths etc. within the specified district
+                            meta -> information about lastUpdate and API maintainer
         """
         if ag not in AGS:
             raise NoValidDistrictError(ag)
@@ -133,19 +143,22 @@ class CovidData:
         return self.__make_request(self.url)
 
     def districts_timeseries(self, ag: str = '', days_limit: int = 0, selected_type: str = 'cases') -> Dict[str, Any]:
-        """[summary]
+        """Epidemiological data on COVID-19. Daily amounts of cases, incidence, deaths and recovered patients
+        per district recorded as timeseries.
 
         Args:
-            ag (str, optional): [description]. Defaults to ''.
-            days_limit (int, optional): [description]. Defaults to 0.
-            selected_type (str, optional): [description]. Defaults to 'cases'.
+            ag (str, optional): 5-digit community identification number (amtlicher gemeindeschlüssel). Defaults
+            to all districts.
+            days_limit (int, optional): Number of latest datapoints can be limited. Defaults to no limit.
+            selected_type (str, optional): Select between 'cases'/'deaths'/'incidence'/'recovered'. Defaults to 'cases'.
 
         Raises:
-            NoValidDistrictError: [description]
-            NoValidTypeError: [description]
+            NoValidDistrictError: If no valid district was chosen (see valid_parameters.py).
+            NoValidTypeError: If no valid type (cases, incidence, deaths, recovered) was chose.
 
         Returns:
-            Dict[str, Any]: [description]
+            Dict[str, Any]: data -> datapoints about the amount of the `selected_type` and its date
+                            meta -> information about lastUpdate and API maintainer
         """
         ag = str(ag)
         if ag and ag not in AGS:
@@ -163,22 +176,26 @@ class CovidData:
         return self.__make_request(self.url)
 
     def vaccinations_total(self) -> Dict[str, Any]:
-        """[summary]
+        """Epidemiological data on COVID-19. The number of vaccination doses administered for the
+        country and each state is returned. Vaccinations per supplier is described.
 
         Returns:
-            Dict[str, Any]: [description]
+            Dict[str, Any]: data -> data on the total amount vaccinations (country and per state)
+                            meta -> information about lastUpdate and API maintainer
         """
         self.url = BASE_URL + API_PATH["vaccination_accumulated"].format()
         return self.__make_request(self.url)
 
     def vaccinations_timeseries(self, days_limit: int = 0) -> Dict[str, Any]:
-        """[summary]
+        """Epidemiological data on COVID-19. Timeseries data of vaccinations are recorded
+        on a daily basis.
 
         Args:
-            days_limit (int, optional): [description]. Defaults to 0.
+            days_limit (int, optional): Number of latest datapoints can be limited. Defaults to no limit.
 
         Returns:
-            Dict[str, Any]: [description]
+            Dict[str, Any]: data -> datapoints about the amount of vaccinations and its date
+                            meta -> information about lastUpdate and API maintainer
         """
         if days_limit:
             self.url = BASE_URL + API_PATH["vaccination_timeseries_paginated"].format(days=days_limit)
@@ -187,13 +204,15 @@ class CovidData:
         return self.__make_request(self.url)
 
     def testing_timeseries(self, weeks_limit: int = 0) -> Dict[str, Any]:
-        """[summary]
+        """Epidemiological data on COVID-19. Timeseries data of tests are recorded
+        on a weekly basis.
 
         Args:
-            weeks_limit (int, optional): [description]. Defaults to 0.
+            weeks_limit (int, optional): Number of latest datapoints can be limited. Defaults to no limit.
 
         Returns:
-            Dict[str, Any]: [description]
+            Dict[str, Any]: data -> datapoints about the number of tests and its date
+                            meta -> information about lastUpdate and API maintainer
         """
         if weeks_limit:
             self.url = BASE_URL + API_PATH["testing_timeseries_paginated"].format(weeks=weeks_limit)
@@ -203,7 +222,7 @@ class CovidData:
 
 
 def datereader(date: str) -> datetime:
-    """Turns the datetime format used in the API responses into a datetime object (datetime standard module).
+    """Turns the datetime string retrieved in the API responses into a datetime object (datetime standard module).
 
     Args:
         date (str): datetime value used within the API.

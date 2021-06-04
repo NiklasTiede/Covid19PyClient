@@ -73,29 +73,51 @@ print(json.dumps(data, sort_keys=True, indent=4, ensure_ascii=False))
 }
 ```
 
-
-# Contents
-- [Featured Data](#featured-data)
-- [Installation](#installation)
-- [How to use](#how-to-use)
-
 # Featured Data
 
-- timeseries data
-- data available for country, states, districts
-
+- Total number of COVID-19 related cases, deaths, incidence, recovered (country, by state, by district, by demographics)
+- Timeseries data (country, districts, vaccinations, tests)
+- And data derived therefrom
 
 # Installation
 
-You can install COVID-19 API Python Client with pip.
+You can install `covid19pyclient` with pip.
 
 ```console
 $ pip install covid19pyclient
 ```
 
+Alternatively, you can download and install `covid19pyclient` from github:
+
+```console
+$ pip install git+https://github.com/NiklasTiede/Covid19PyClient
+```
+
 # How to use
 
-`covid19pyclient` returns the data as dictionaries.
+`CovidData`'s class methods return the requested as dictionary.
 
+```python
+from covid19pyclient import CovidData
+
+covid = CovidData()
+```
+Here's a list of all the methods which can be used to access different data about COVID-19 in germany:
+
+```python
+covid.germany_total()
+covid.districts_timeseries()
+covid.districts_total()
+covid.germany_by_agegroups()
+covid.germany_timeseries()
+covid.germany_total()
+covid.states_by_agegroups()
+covid.states_total()
+covid.testing_timeseries()
+covid.vaccinations_timeseries()
+covid.vaccinations_total()
+```
+
+For more information about these function, see [Documentation](https://covid19pyclient.readthedocs.io/en/latest/).
 
 <!-- PYPI-Docs:END -->

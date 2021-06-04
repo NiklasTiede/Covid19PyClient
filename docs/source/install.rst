@@ -13,4 +13,4 @@ Download and install the current release of ``covid19pyclient`` from the Python 
 
 Alternatively, you can download and install ``covid19pyclient`` from github::
 
-    $ pip install git+https://github.com/NiklasTiede/RKI-COVID19-API-PythonClient
+    $ pip install git+https://github.com/NiklasTiede/Covid19PyClient

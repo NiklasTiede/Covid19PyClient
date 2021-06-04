@@ -11,7 +11,6 @@
 import os
 import sys
 
-import covid19pyclient
 import sphinx_rtd_theme
 sphinx_rtd_theme.__version__
 
@@ -25,7 +24,7 @@ copyright = "2021, Niklas Tiede"
 author = 'Niklas Tiede'
 
 # The full version, including alpha/beta/rc tags
-release = covid19pyclient.__version__
+release = '1.0.0'
 
 master_doc = 'index'
 # -- General configuration ---------------------------------------------------

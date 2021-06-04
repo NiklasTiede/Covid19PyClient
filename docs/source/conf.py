@@ -49,7 +49,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 pygments_style = "sphinx"
 
-version = covid19pyclient.__version__
+version = '1.0.0'
 
 # -- Options for HTML output -------------------------------------------------
 

@@ -201,14 +201,14 @@ class CovidData:
             self.url = BASE_URL + API_PATH["testing_timeseries_all"].format()
         return self.__make_request(self.url)
 
-    @staticmethod
-    def datereader(date: str) -> datetime:
-        """Turns the datetime format used in the API responses into a datetime object (datetime standard module).
 
-        Args:
-            date (str): datetime value used within the API.
+def datereader(date: str) -> datetime:
+    """Turns the datetime format used in the API responses into a datetime object (datetime standard module).
 
-        Returns:
-            [datetime.datetime]: datetime object
-        """
-        return datetime.strptime(date, "%Y-%m-%dT%H:%M:%S.%fZ")
+    Args:
+        date (str): datetime value used within the API.
+
+    Returns:
+        [datetime.datetime]: datetime object
+    """
+    return datetime.strptime(date, "%Y-%m-%dT%H:%M:%S.%fZ")

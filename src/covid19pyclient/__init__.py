@@ -1,6 +1,7 @@
 """Top-level package for `covid19pyclient`."""
 from .__main__ import AGS  # noqa
 from .__main__ import CovidData  # noqa
+from .__main__ import datereader  # noqa
 from .__main__ import STATES  # noqa
 from .__main__ import TYPES  # noqa
 

@@ -106,16 +106,19 @@ Here's a list of all the methods which can be used to access different data abou
 
 ```python
 covid.germany_total()
-covid.districts_timeseries()
-covid.districts_total()
-covid.germany_by_agegroups()
 covid.germany_timeseries()
-covid.germany_total()
-covid.states_by_agegroups()
+covid.germany_by_agegroups()
+
+covid.districts_total()
+covid.districts_timeseries()
+
 covid.states_total()
-covid.testing_timeseries()
-covid.vaccinations_timeseries()
+covid.states_by_agegroups()
+
 covid.vaccinations_total()
+covid.vaccinations_timeseries()
+
+covid.testing_timeseries()
 ```
 
 For more information about these function, see [Documentation](https://covid19pyclient.readthedocs.io/en/latest/).

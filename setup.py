@@ -20,12 +20,10 @@ setup(
     url='https://github.com/NiklasTiede/covid19pyclient',
     description=f"A Python Wrapper around the COVID-19 API {__api_src__!r}.",
     long_description=pathlib.Path("pypi_description.md").read_text(encoding="utf-8"),
-
     project_urls={
-        'Documentation': '',    # TODO enter readthedocs url
+        'Documentation': 'https://covid19pyclient.readthedocs.io/en/latest/',
         'Source Code': 'https://github.com/NiklasTiede/covid19pyclient',
     },
-
     package_dir={"": "src"},
     packages=find_packages(where="src"),
     python_requires='>=3.6',
@@ -41,21 +39,16 @@ setup(
         ],
     },
     platforms="any",
-    # setup_requires='pytest-runner',
-    # test_suite='tests',
-    # tests_require='pytest>=3',
-    # zip_safe=False,
-    # include_package_data=True,
-    # keywords='covid19pyclient',
-    # packages=find_packages(where="covid19pyclient"),
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
+        'Intended Audience :: Science/Research',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
 )

@@ -1,21 +1,27 @@
 #!/usr/bin/env python
 """Tests for `covid19pyclient` package."""
+import time
+
 import pytest
 
-# from covid19pyclient import CovidData
+from src.covid19pyclient import CovidData
 
 
-@pytest.fixture
-def response():
-    """Sample pytest fixture.
-
-    See more at: http://doc.pytest.org/en/latest/fixture.html
-    """
-    # import requests
-    # return requests.get('https://github.com/audreyr/cookiecutter-pypackage')
-
-
-def test_content(response):
-    """Sample pytest test function with the pytest fixture as an argument."""
-    # from bs4 import BeautifulSoup
-    # assert 'GitHub' in BeautifulSoup(response.content).title.string
+def test_germany_total():
+    """Test if method returns expected data from the API endpoint."""
+    # time.sleep(4)
+    covid = CovidData()
+    data = covid.germany_total()
+    values = [
+        ('cases', int),
+        ('casesPer100k', float),
+        ('casesPerWeek', int),
+        ('deaths', int),
+        ('delta', dict),
+        ('meta', dict),
+        ('recovered', int),
+        ('weekIncidence', float)
+        ]
+    for key, value in values:
+        print(key, data[key])
+        assert type(data[key]) is value

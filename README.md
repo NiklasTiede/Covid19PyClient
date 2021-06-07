@@ -4,7 +4,6 @@
    <h3 align="center">A Thin Wrapper for the API of the Robert Koch Institute, Germany.</h3>
 <p>
 
-<!-- <a alt="rki covid api" href="https://api.corona-zahlen.org/docs/">COVID-19 API</a> -->
 
 ---
 
@@ -12,23 +11,23 @@
   <!-- <a alt="Platform" href="https://pypi.org/project/covid19pyclient/">
     <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/covid19pyclient">
   </a> -->
-  <!-- <a alt="GH actions" href="https://github.com/NiklasTiede/covid19pyclient/actions">
+  <a alt="GH actions" href="https://github.com/NiklasTiede/covid19pyclient/actions">
     <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/NiklasTiede/covid19pyclient/Continuos%20Integration">
-  </a> -->
+  </a>
   <!-- <a alt="GH Release" href="https://github.com/NiklasTiede/covid19pyclient/releases">
     <img src="https://img.shields.io/github/v/release/NiklasTiede/covid19pyclient" />
-  </a>
+  </a> -->
   <a alt="Codecov" href="https://app.codecov.io/gh/NiklasTiede/covid19pyclient">
     <img src="https://img.shields.io/codecov/c/github/NiklasTiede/covid19pyclient" />
-  </a> -->
+  </a>
 </p>
 
 <p align="center">
   <a alt="readthedocs documentation" href="https://covid19pyclient.readthedocs.io/en/latest/">Documentation</a>
   •
   <a alt="matplotlib plot examples" href="https://github.com/NiklasTiede/COVID19-API-PythonClient/tree/main/examples">Plot Examples</a>
-  •
-  <a alt="RKI API source code" href="https://github.com/marlon360/rki-covid-api">Covid API src</a>
+  <!-- •
+  <a alt="RKI API source code" href="https://github.com/marlon360/rki-covid-api">Covid API src</a> -->
 <p>
 
 

@@ -28,7 +28,7 @@ test-all: ## test across Python 3.6 - 3.9
 	tox
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source covid19pyclient -m pytest
+	coverage run --source src/covid19pyclient -m pytest
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html
@@ -39,7 +39,7 @@ coverage: ## check code coverage quickly with the default Python
 
 .PHONY: clean clean-pyc clean-test clean-build
 
-clean: clean-pyc clean-test clean-build ## remove all build, test and Python artifacts
+clean: clean-pyc clean-test clean-build clean-coverage ## remove all build, test and Python artifacts
 
 clean-pyc: ## remove Python file artifacts
 	find . -name '*.pyc' -exec rm -f {} +
@@ -59,6 +59,9 @@ clean-build: ## remove build artifacts
 	find . -name '*.egg-info' -exec rm -fr {} +
 	find . -name '*.egg' -exec rm -f {} +
 
+clean-coverage: ## remove coverage report
+	rm .coverage
+	rm -fr htmlcov
 
 
 # ------------  Documentation  -----------------------------------

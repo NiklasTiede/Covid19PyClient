@@ -1,3 +1,8 @@
+# requests
+# pytest, pytest-cov, tox
+# flake8, pre-commit
+# twine, sphinx, rtd
+
 alabaster==0.7.12
 appdirs==1.4.4
 atomicwrites==1.4.0

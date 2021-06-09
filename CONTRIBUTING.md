@@ -59,12 +59,13 @@ Ready to contribute? Here's how to set up `covid19pyclient` for local developmen
 $ git clone git@github.com:your_name_here/covid19pyclient.git
 ```
 
-3. Install your local copy into a virtualenv. Assuming you have pipenv installed, this is how you set up your fork for local development:
+3. Install your local copy into a virtualenv. Assuming you have `pipenv` installed, this is how you set up your fork for local development:
 
 ```
     $ cd covid19pyclient/
     $ pipenv --python 3.9
-    $ python setup.py develop
+    $ pipenv shell
+    $ pip install -e .[dev]
 ```
 
 4. Create a branch for local development:
@@ -84,6 +85,7 @@ $ make test
 $ make test-all
 ```
 
+The Makefile gives a nice overview about the workflows commonly used when working on the project as a developer.
 
 6. Commit your changes and push your branch to GitHub::
 

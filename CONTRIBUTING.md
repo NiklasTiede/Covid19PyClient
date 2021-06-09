@@ -59,11 +59,11 @@ Ready to contribute? Here's how to set up `covid19pyclient` for local developmen
 $ git clone git@github.com:your_name_here/covid19pyclient.git
 ```
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development:
+3. Install your local copy into a virtualenv. Assuming you have pipenv installed, this is how you set up your fork for local development:
 
 ```
-    $ mkvirtualenv covid19pyclient
     $ cd covid19pyclient/
+    $ pipenv --python 3.9
     $ python setup.py develop
 ```
 
@@ -75,16 +75,15 @@ $ git checkout -b name-of-your-bugfix-or-feature
 
    Now you can make your changes locally.
 
-5. When you're done making changes, check that your changes pass flake8 and the
-   tests, including testing other Python versions with tox::
+5. When you're done making changes, check that your changes pass linting (pre-commit) and the
+   tests (pytest), including testing other Python versions with tox. Each of these can be called via the `Makefile`::
 
 ```
-$ flake8 covid19pyclient tests
-$ python setup.py test or pytest
-$ tox
+$ make pre-commit
+$ make test
+$ make test-all
 ```
 
-   To get flake8 and tox, just pip install them into your virtualenv.
 
 6. Commit your changes and push your branch to GitHub::
 
@@ -105,7 +104,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.md.
 3. The pull request should work for Python 3.6, 3.7, 3.8 and 3.9. Check
-   https://github.com/NiklasTiede/cookiecutter-NiklasPyPackage/tree/main/.github/workflows
+   https://github.com/NiklasTiede/covid19pyclient/tree/main/.github/workflows
    and make sure that the tests pass for all supported Python versions.
 
 # Tips
@@ -113,7 +112,14 @@ Before you submit a pull request, check that it meets these guidelines:
 To run a subset of tests:
 
 ```
-$ pytest tests.test_covid19pyclient
+$ pytest tests/covid19pyclient_test.py
+```
+
+To lint a single file or enforce type checking for a particular file.
+
+```
+$ flake8 filename
+$ mypy filename
 ```
 
 # Deploying

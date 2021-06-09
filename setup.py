@@ -1,24 +1,33 @@
 #!/usr/bin/env python
 """The setup script."""
 import pathlib
+import re
+from typing import Any
+from typing import Union
 
 from setuptools import find_packages
 from setuptools import setup
 
-from src.covid19pyclient import __api_src__
-from src.covid19pyclient import __author__
-from src.covid19pyclient import __email__
-from src.covid19pyclient import __version__
+
+def get_value(variable: str) -> Union[str, Any]:
+    """ Direct import of metadata would invoke a ModuleNotFoundError for 3rd party package
+    libraries when installing this project for development.
+    """
+    content = pathlib.Path("src/covid19pyclient/__init__.py").read_text(encoding="utf-8")
+    pattern = f'^{variable} = [\'"]([^\'\"]*)[\'"]'
+    raw_s = r'{}'.format(pattern)
+    p = re.compile(raw_s, re.M)
+    return p.search(content).group(1)  # type: ignore
 
 
 setup(
     name='covid19pyclient',
-    version=__version__,
-    author=__author__,
-    author_email=__email__,
+    version=get_value('__version__'),
+    author=get_value('__author__'),
+    author_email=get_value('__email__'),
     license="MIT license",
     url='https://github.com/NiklasTiede/covid19pyclient',
-    description=f"A Python Wrapper around the COVID-19 API {__api_src__!r}.",
+    description=f"A Python Wrapper around the COVID-19 API {get_value('__api_src__')!r}.",
     long_description=pathlib.Path("pypidocs.md").read_text(encoding="utf-8"),
     project_urls={
         'Documentation': 'https://covid19pyclient.readthedocs.io/en/latest/',
@@ -30,7 +39,7 @@ setup(
     install_requires=[
         "requests>=2.21.0",
     ],
-    extras_require={         # pip install .[dev]
+    extras_require={         # pip install .[dev] or python setup.py develop
         "dev": [
             "pytest",
             "pytest-cov",

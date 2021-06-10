@@ -61,7 +61,7 @@ clean-build: ## remove build artifacts
 	find . -name '*.egg' -exec rm -f {} +
 
 clean-coverage: ## remove coverage report
-	rm .coverage
+	rm -fr .coverage
 	rm -fr htmlcov
 
 

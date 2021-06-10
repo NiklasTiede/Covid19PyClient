@@ -28,14 +28,11 @@ wanted" is open to whoever wants to implement it.
 
 ## Implement Features
 
-Look through the GitHub issues for features. Anything tagged with "enhancement"
-and "help wanted" is open to whoever wants to implement it.
+Look through the GitHub issues for features. Anything tagged with "enhancement" and "help wanted" is open to whoever wants to implement it.
 
 ## Write Documentation
 
-COVID-19 API Python Client could always use more documentation, whether as part of the
-official COVID-19 API Python Client docs, in docstrings, or even on the web in blog posts,
-articles, and such.
+COVID-19 API Python Client could always use more documentation, whether as part of the official COVID-19 API Python Client docs, in docstrings, or even on the web in blog posts, articles, and such.
 
 ## Submit Feedback
 

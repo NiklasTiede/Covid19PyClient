@@ -39,7 +39,7 @@ setup(
     install_requires=[
         "requests>=2.21.0",
     ],
-    extras_require={         # pip install .[dev] or python setup.py develop
+    extras_require={         # pip install -e .[dev]
         "dev": [
             "pytest",
             "pytest-cov",

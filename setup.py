@@ -29,6 +29,7 @@ setup(
     url='https://github.com/NiklasTiede/covid19pyclient',
     description=f"A Python Wrapper around the COVID-19 API {get_value('__api_src__')!r}.",
     long_description=pathlib.Path("pypidocs.md").read_text(encoding="utf-8"),
+    long_description_content_type='text/markdown',
     project_urls={
         'Documentation': 'https://covid19pyclient.readthedocs.io/en/latest/',
         'Source Code': 'https://github.com/NiklasTiede/covid19pyclient',

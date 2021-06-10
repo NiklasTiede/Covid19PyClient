@@ -7,7 +7,7 @@ install: clean ## install the package to the active Python's site-packages
 	python setup.py install
 
 dev-install: ## install the package to the active Python's site-packages for development
-	python setup.py develop
+	pip install -e .[dev]
 
 # ------------- Test/Lint  ------------------------------------
 

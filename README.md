@@ -11,9 +11,6 @@
   <a alt="Platform" href="https://pypi.org/project/covid19pyclient/">
     <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/covid19pyclient">
   </a>
-  <a alt="GH actions" href="https://github.com/NiklasTiede/covid19pyclient/actions">
-    <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/NiklasTiede/covid19pyclient/Continuos%20Integration">
-  </a>
   <a alt="GH Release" href="https://github.com/NiklasTiede/covid19pyclient/releases">
     <img src="https://img.shields.io/github/v/release/NiklasTiede/covid19pyclient" />
   </a>
